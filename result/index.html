@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Quiz Result</title>
+      <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("./image/imd-2.jpg");
+            background-size: cover;
+         }
+
+         .result-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: block;
+            width: 80%;
+            /* Added width for better layout */
+            max-width: 600px;
+            /* Adjust maximum width as needed */
+            margin: 20px;
+            /* Added margin for spacing */
+         }
+
+         .result-container h1 {
+            color: #4caf50;
+            margin-bottom: 20px;
+            /* Added margin below heading */
+         }
+
+         table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            /* Added border for table */
+         }
+
+         th,
+         td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            /* Align text to left */
+         }
+
+         th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            /* Make header text bold */
+         }
+
+         td {
+            background-color: #f9f9f9;
+            /* Alternate background color for rows */
+         }
+
+         p {
+            color: #333;
+            margin: 10px 0;
+         }
+      </style>
+   </head>
+
+   <body>
+      <div class="result-container">
+         <h1>Your Quiz Result</h1>
+         <table>
+            <tr>
+               <th>Student Details</th>
+            </tr>
+            <tr>
+               <td>Roll No</td>
+               <td>Name</td>
+               <td>Batch</td>
+               <td>Section</td>
+            </tr>
+            <tr>
+               <td id="roll-no"></td>
+               <td id="name"></td>
+               <td id="batch"></td>
+               <td id="section"></td>
+            </tr>
+            <tr>
+               <td>Total Marks</td>
+               <td colspan="3" id="total-marks"></td>
+            </tr>
+         </table>
+      </div>
+
+      <script>
+         // Retrieve student details and quiz result from sessionStorage
+         var rollNo = sessionStorage.getItem("rollNo");
+         var name = sessionStorage.getItem("name");
+         var batch = sessionStorage.getItem("batch");
+         var section = sessionStorage.getItem("section");
+         var totalMarks = sessionStorage.getItem("quizResult");
+
+         // Display student details and quiz result
+         document.getElementById("roll-no").textContent = rollNo;
+         document.getElementById("name").textContent = name;
+         document.getElementById("batch").textContent = batch;
+         document.getElementById("section").textContent = section;
+
+         document.getElementById("total-marks").textContent = totalMarks;
+      </script>
+   </body>
+</html>
